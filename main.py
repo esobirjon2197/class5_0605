@@ -1,0 +1,62 @@
+
+
+# 9-m
+class GameCharacter:
+    def __init__(self, name, health, level, power):
+        self.name = name
+        self._health = health
+        self._level = level
+        self.__power = power
+
+    def attack(self):
+        self._health -= 20
+
+    def heal(self, x):
+        self._health += x
+
+    def level_up(self):
+        self._level += 1
+
+    def info(self):
+        print(f"Health:{self._health}")
+        print(f"Level:{self._level}")
+
+
+g1 = GameCharacter("Hero", 100, 1, 50)
+
+g1.attack()
+g1.info()
+
+g1.heal(20)
+g1.info()
+
+g1.level_up()
+g1.info()
+
+
+# 10-m
+class Movie:
+    def __init__(self, title, duration, rating):
+        self.title = title
+        self._duration = duration
+        self.__rating = rating
+        self.playing = ""
+
+    def play(self):
+        self.playing = self.title
+
+    def rate(self, x):
+        self.__rating = x
+
+    def info(self):
+        print(f"Playing {self.playing}")
+        print(f"Rating:{self.__rating}")
+
+
+m1 = Movie("Avengers", 120, 8)
+
+m1.play()
+m1.info()
+
+m1.rate(9)
+m1.info()
